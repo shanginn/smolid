@@ -6,9 +6,9 @@ namespace Shanginn\Smolid;
 
 final class RandomPool implements RandomSourceInterface
 {
-    private const int POOL_SIZE_MULTIPLIER = 256;
-    private string $pool                   = '';
-    private int $poolOffset                = 0;
+    private const POOL_SIZE_MULTIPLIER = 256;
+    private string $pool               = '';
+    private int $poolOffset            = 0;
 
     public function get(int $length): string
     {
