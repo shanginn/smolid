@@ -1,30 +1,28 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Shanginn\Smolid;
 
-final class Smolid
+
+class Smolid
 {
-    private int $alphabetLength;
+    private static ?SmolidFactory $factory = null;
 
-    public function __construct(
-        private string $alphabet = Alphabet::ALPHANUMERIC,
-        private RandomSourceInterface $pool = new RandomPool(),
-    )
+    public static function getFactory(): SmolidFactory
     {
-        $this->alphabetLength = strlen($alphabet);
-    }
-
-    public function generate(int $size = 21): string
-    {
-        $id = '';
-        $bytes = $this->pool->get($size);
-
-        for ($i = 0; $i < $size; $i++) {
-            $id .= $this->alphabet[ord($bytes[$i]) & $this->alphabetLength - 1];
+        if (self::$factory === null) {
+            self::$factory = new SmolidFactory();
         }
 
-        return $id;
+        return self::$factory;
+    }
+
+    public static function setFactory(SmolidFactory $factory): void
+    {
+        self::$factory = $factory;
+    }
+
+    public static function id(): string
+    {
+        return self::getFactory()->generate();
     }
 }
