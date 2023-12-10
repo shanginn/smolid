@@ -1,0 +1,30 @@
+{
+    "name": "shanginn/smolid",
+    "description": "smol id generator",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Shanginn\\Smolid\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shanginn\\Smolid\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nikolai Shangin",
+            "email": "shanginn@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5",
+        "symfony/var-dumper": "^7.0"
+    }
+}
