@@ -9,8 +9,9 @@ interface RandomSourceInterface
     /**
      * Retrieves random data of a specified length from the source.
      *
-     * @param int $length The length of data to retrieve.
-     * @return string The data retrieved from the source.
+     * @param int $length the length of data to retrieve
+     *
+     * @return string the data retrieved from the source
      */
     public function get(int $length): string;
 }

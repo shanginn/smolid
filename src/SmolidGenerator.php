@@ -11,17 +11,16 @@ final class SmolidGenerator
     public function __construct(
         private string $alphabet = Alphabet::ALPHANUMERIC,
         private RandomSourceInterface $pool = new RandomPool(),
-    )
-    {
+    ) {
         $this->alphabetLength = strlen($alphabet);
     }
 
     public function generate(int $size = 21): string
     {
-        $id = '';
+        $id    = '';
         $bytes = $this->pool->get($size);
 
-        for ($i = 0; $i < $size; $i++) {
+        for ($i = 0; $i < $size; ++$i) {
             $id .= $this->alphabet[ord($bytes[$i]) & $this->alphabetLength - 1];
         }
 

@@ -2,7 +2,6 @@
 
 namespace Shanginn\Smolid;
 
-
 class Smolid
 {
     private static ?SmolidFactory $factory = null;

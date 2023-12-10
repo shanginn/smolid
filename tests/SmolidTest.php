@@ -13,7 +13,7 @@ class SmolidTest extends TestCase
     public function testSmolid()
     {
         $generator = new SmolidGenerator();
-        $id = $generator->generate(10);
+        $id        = $generator->generate(10);
 
         $this->assertIsString($id);
     }
@@ -21,7 +21,7 @@ class SmolidTest extends TestCase
     public function testSmolidWithAAlphabetAndSize()
     {
         $generator = new SmolidGenerator('a');
-        $id = $generator->generate(10);
+        $id        = $generator->generate(10);
 
         $this->assertEquals('aaaaaaaaaa', $id);
     }
@@ -29,7 +29,7 @@ class SmolidTest extends TestCase
     public function testSmolidWithCustomAlphabet()
     {
         $generator = new SmolidGenerator(Alphabet::HEXADECIMAL_UPPERCASE);
-        $id = $generator->generate(size: 21);
+        $id        = $generator->generate(size: 21);
 
         $this->assertMatchesRegularExpression('/^[0-9A-F]{21}$/', $id);
     }
@@ -37,11 +37,11 @@ class SmolidTest extends TestCase
     public function testGenerateOneMillionSmolidsNoDuplicates()
     {
         $smolid = new SmolidGenerator();
-        $ids = [];
-        $size = 10;
-        $count = 1_000_000;
+        $ids    = [];
+        $size   = 10;
+        $count  = 1_000_000;
 
-        for ($i = 0; $i < $count; $i++) {
+        for ($i = 0; $i < $count; ++$i) {
             $ids[] = $smolid->generate($size);
         }
 

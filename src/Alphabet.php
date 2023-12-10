@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Shanginn\Smolid;
 
 /**
- * inspired by https://github.com/CyberAP/nanoid-dictionary/tree/master
+ * inspired by https://github.com/CyberAP/nanoid-dictionary/tree/master.
  */
 final readonly class Alphabet
 {
