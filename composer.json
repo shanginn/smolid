@@ -3,7 +3,7 @@
     "description": "smol id generator",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "2.0.0",
     "autoload": {
         "psr-4": {
             "Shanginn\\Smolid\\": "src/"
@@ -27,5 +27,11 @@
     "require-dev": {
         "phpunit/phpunit": "^10.5",
         "symfony/var-dumper": "^7.0"
+    },
+    "scripts": {
+        "fix": [
+            "Composer\\Config::disableProcessTimeout",
+            "PHP_CS_FIXER_IGNORE_ENV=1 ./tools/php-cs-fixer/vendor/bin/php-cs-fixer fix -vvv --config=.php_cs.php --allow-risky=yes"
+        ]
     }
 }
